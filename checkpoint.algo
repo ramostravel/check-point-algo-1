@@ -1,0 +1,33 @@
+ALGORITHM char_caracter
+VAR
+    caracter:string;
+    array voyel:array of char[5]:=["a","e","u","o","i"];
+n,l,i,j,v:interger:=0;
+
+
+    
+BEGIN
+repeat 
+    read(caracter) 
+until (caracter[caracter.length]='.')        
+    l:=caracter.length;
+    for i from 1 to l do   
+if caracter [i] ='' then 
+n=n+1;
+end_if;
+end_for;
+for i from 1 to l do
+for j from 1 to 4 do
+if caracter [i]=voyel 
+v=v+1;
+end_if;
+end_for;
+end_for;
+
+
+
+
+    
+
+
+END
