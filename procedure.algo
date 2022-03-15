@@ -1,0 +1,68 @@
+PROCEDURE Dot_Product(v1,v2 : ARRAY_OF INTEGER, VAR ps : INTEGER)
+VAR
+    i : INTEGER;
+BEGIN
+    ps :=0;
+    
+    IF (v1.length <> v2.length) THEN
+        Write("we cannot calculat dot product"); 
+    END_IF
+    FOR (i+0 i<v1.length,i++)
+    ps:=ps+v1[i]*v2[i];
+    end_if
+END
+
+ALGORITHM orthogonal ; 
+VAR
+    v : ARRAY_OF INTEGER [15][15];
+    ps,n,i,j : INTEGER;
+BEGIN
+Read(n)
+(for i from 0 to (n-1)do )
+(for j from 0 to (n-1)do )
+    read_array(i,j,v[i][j]); 
+    Dot_Product(v[i][j],v[i+1][j]);
+    IF (ps = 0) THEN
+        Write("v[i] and v[i+1]are orthogonal");
+    ELSE
+        Write("v[i] and v[i+1] are not orthogonal");
+    END_IF
+END
+
+
+
+FUNCTION Dot_Product(v1,v2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    i,ps : INTEGER;
+BEGIN
+    ps :=0;
+    i:=0;
+    IF (v1.length <> v2.length) THEN
+        Write("we cannot calculat dot product");
+        RETURN false;
+    END_IF
+    WHILE (i <v1.length ) DO
+        ps := ps + v1[i]*v2[i];
+    END_WHILE
+    RETURN ps ;
+END
+
+ALGORITHM orthogonal;
+VAR
+    v : ARRAY_OF INTEGER [15][15];
+    ps : INTEGER;
+    i,j=0;
+BEGIN
+    Read(n)
+for i from 0 to n-1 do
+for j from 0 to n-1 do
+    read_array(i,j,v[i][j]); 
+   ps := Dot_Product(v[i][j],v[i+1][j]);
+     IF (ps = 0) THEN
+        Write("v[i] and v[i+1] are orthogonal");
+    ELSE
+        Write("v[i] and v[i+1] are not orthogonal");
+    END_IF
+END_FOR
+END_FOR  
+END
